@@ -8,7 +8,7 @@ This repository maintain data for [WhatsThatFormula](https://www.whatsthatformul
 ## Contribute
 
 To contribute a formula to the dataset:
-1. use the following snippet:
+1. Write the details of the formula use the following JSON snippet:
 ```
   {
         "name": "{Formula name}",
@@ -17,7 +17,6 @@ To contribute a formula to the dataset:
         "definition": {
             "{variable1}": "{description}",
             "{variable2}": "{description}",
-            "{variable3}": "{description}",
             "{variablen}": "{description}"
             
         },
@@ -36,9 +35,9 @@ To contribute a formula to the dataset:
 
 ```
 
-Replace `{...}` with the corresponding information. Your entry should look like this [example]().
+Replace `{...}` with the corresponding information. Your entry should look like this [example](https://github.com/valispace/WhatsThatFormula/blob/master/example.json).
 
-2. Append this entry to `raw-formulae.json` to [this file]()
+2. Append this entry to `raw-formulae.json` to [this file](https://github.com/valispace/WhatsThatFormula/blob/master/raw_formulae.json)
 
 3. Submit a pull request with the modified `raw-formulae.json.
 
