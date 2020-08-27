@@ -37,9 +37,7 @@ To contribute a formula to the dataset:
 
 Replace `{...}` with the corresponding information. Your entry should look like this [example](https://github.com/valispace/WhatsThatFormula/blob/master/example.json).
 
-2. Append this entry to `raw-formulae.json` to [this file](https://github.com/valispace/WhatsThatFormula/blob/master/raw_formulae.json)
 
-3. Submit a pull request with the modified `raw-formulae.json.
 
 
 ## Notes
