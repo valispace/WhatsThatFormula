@@ -146,7 +146,7 @@ function getdefinitionHTML(defined){
 function onKeyup() {
 	console.log(searchEle.value);
 	if(!searchEle.value) {
-		doSearch();
+		doSearch(dataset, fuse);
 	}
 }
 
@@ -2507,7 +2507,7 @@ fetch('data.json')
 		}
 		dataset = dataset.reverse();
 		fuse = new Fuse(dataset, options);
-		doSearch(dataset);
+		doSearch(dataset,fuse);
 	});
 
 
