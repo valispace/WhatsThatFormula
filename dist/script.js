@@ -2486,29 +2486,28 @@ var showMore = 5
 var showMoreindices=[0, showMore-1]
 var resultJSON = {}
 var delayedSearch;
-let dataset;
 
 searchEle.addEventListener("input", event => {
 	if (delayedSearch) {
 		clearTimeout(delayedSearch);
 	}
-	delayedSearch = setTimeout(doSearch(dataset), 300);
+	delayedSearch = setTimeout(doSearch, 300);
 });
 
-
+let dataset;
 /* MODIFY HERE: LINK TO THE HOSTED JSON*/
 fetch('data.json')
 	.then(response => response.json())
 	.then(function(json){
 		dataset = json;
-		for (i=0; i<dataset.length; i++){
-			dataset[i].id = i;
-		}
-		var fuse = new Fuse(dataset, options);
-		doSearch(dataset);
+		console.log(dataset)
 	});
 var allids = []
 
-
+for (i=0; i<dataset.length; i++){
+	dataset[i].id = i;
+}
+var fuse = new Fuse(dataset, options);
+doSearch(dataset);
 
 
