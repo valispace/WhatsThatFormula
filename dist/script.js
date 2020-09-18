@@ -4,7 +4,7 @@ var searchEle = document.querySelector(".input"),
 	info = document.querySelector(".info");
 
 
-function doSearch(dataset) {
+function doSearch(dataset, fuse) {
 
 	showMore = 9;
 	showMoreindices=[0, showMore];
@@ -46,7 +46,7 @@ function renderVisual(resultJSON, indices, increment) {
 </div>
 <div class="column">
 <div class="level-right has-text-centered">
-      <button class="button" onclick="copyToClipboardMsg(${curr.item.id})">
+      <button class="button_formula" onclick="copyToClipboardMsg(${curr.item.id})">
 
 <span>
     <i class="fa fa-copy" aria-hidden="true"></i>
@@ -56,7 +56,7 @@ function renderVisual(resultJSON, indices, increment) {
 <div class='divider'></div>
 </button>
 
-<button class="button" onclick="downloadPNG(${curr.item.id})">
+<button class="button_formula" onclick="downloadPNG(${curr.item.id})">
   <span>
     <i class="fa fa-download" aria-hidden="true"></i>
   </span>
@@ -2486,28 +2486,28 @@ var showMore = 5
 var showMoreindices=[0, showMore-1]
 var resultJSON = {}
 var delayedSearch;
+let dataset;
+let fuse;
 
 searchEle.addEventListener("input", event => {
 	if (delayedSearch) {
 		clearTimeout(delayedSearch);
 	}
-	delayedSearch = setTimeout(doSearch, 300);
+	delayedSearch = setTimeout(doSearch(dataset,fuse), 300);
 });
 
-let dataset;
+
 /* MODIFY HERE: LINK TO THE HOSTED JSON*/
 fetch('data.json')
 	.then(response => response.json())
 	.then(function(json){
 		dataset = json;
-		console.log(dataset)
+		for (i=0; i<dataset.length; i++){
+			dataset[i].id = i;
+		}
+		fuse = new Fuse(dataset, options);
+		doSearch(dataset);
 	});
-var allids = []
 
-for (i=0; i<dataset.length; i++){
-	dataset[i].id = i;
-}
-var fuse = new Fuse(dataset, options);
-doSearch(dataset);
 
 
