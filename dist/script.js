@@ -2505,6 +2505,7 @@ fetch('data.json')
 		for (i=0; i<dataset.length; i++){
 			dataset[i].id = i;
 		}
+		dataset = dataset.reverse();
 		fuse = new Fuse(dataset, options);
 		doSearch(dataset);
 	});
