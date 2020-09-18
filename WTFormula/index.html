@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>WTFormula</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>WTFormula</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- partial:index.partial.html -->
+<script type="text/javascript" src="https://unpkg.com/canvg@3.0.4/lib/umd.js"></script>
+
+<script>
+MathJax = {
+  tex2jax: {
+            extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            jax: ["input/TeX", "output/SVG"],
+        },
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="5bsFC5tw"></script>
+
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+
+
+
+
+
+
+<nav class="navbar">
+  <div class="navbar-brand" role="navigation" aria-label="main navigation">
+    <a class="navbar-item" href="https://www.valispace.com" target="_blank">
+      <!-- MODIFY HERE: ENTER LINK OF THE HOSTED TRANSPARENT LOGO -->
+      <img src="valispace_logo_orange.png" alt="Valispace: A browser based engineering collaboration tool"  height="300">
+    </a>
+
+
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" onclick="openNavMenu()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-end">
+        <a class="navbar-item bd-tw-button button" data-social-network="Facebook" data-social-action="share" data-social-target="http://bulma.io" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fvalispace.com">
+          <span class="icon"><i class="fa fa-linkedin"></i></span>
+          <span>Share</span>
+        </a>
+        <a class="navbar-item bd-tw-button button" data-social-network="Facebook" data-social-action="share" data-social-target="http://bulma.io" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fvalispace&amp;src=sdkpreparse">
+          <span class="icon"><i class="fa fa-facebook"></i></span>
+          <span>Share</span>
+        </a>
+        <a class="navbar-item bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=I'm using @vali_space's awesome online cheatsheet for engineers. Check it out: http://whatsthatformula.com">
+          <span class="icon"><i class="fa fa-twitter"></i></span>
+          <span>Tweet</span>
+        </a>
+        <a class="navbar-item button" href="https://github.com/valispace/WhatsThatFormula" target="_blank">
+          <span class="icon"><i class="fa fa-github"></i></span>
+          <span>Contribute</span>
+        </a>
+      </div>
+    </div>
+</nav>
+
+  <section class="hero is-light has-background-primary-light">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered">
+          <span style="color: #FF9900">$ \</span>What's <span style="color: #FF9900">[</span>That<span style="color: #FF9900">]</span> <span style="color: #FF9900">{</span>Formula<span style="color: #FF9900">}</span> ? <span style="color: #FF9900">$</span>
+        </h1>
+        <p>
+        <h2 class="subtitle" align="center">
+          An Online Cheatsheet for Engineers
+        </h2>
+      </div>
+    </div>
+  </section>
+  <body>
+  <section class="section">
+    <div class="container container-with-background p-6">
+      <div class="field">
+        <h1 class="title">Search</h1>
+        <div class="control">
+          <input class="input" type="text" value='' onkeyup="onKeyup()" onfocus="this.value =''" placeholder="What's That Formula you're looking for?">
+          <div class="info"></div>
+        </div>
+        <hr>
+        <div class="results">
+          <div class="visual"></div>
+        </div>
+        <div class="has-text-centered">
+        <input class="button" type="reset" value="Show more" id="ShowMoreButton" onclick="renderVisual(resultJSON, showMoreindices, showMore)">
+      </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+
+
+  <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <!-- MODIFY HERE: ENTER LINK OF THE HOSTED TRANSPARENT LOGO -->
+      <strong>Whats That Formula?</strong> <br> by <br><a href="https://valispace.com"><img src="valispace_logo_gray.png" alt="Valispace: A browser based engineering collaboration tool"  width="350" height="10"></a> <br> the smart productivity tool for engineers
+    <p>
+      <strong> Disclaimer </strong>
+      <p>What's that Formula is supported by external contributors. Valispace does not take responsibility for the correctness of the information. <p> Please notify us if you notice any inconsistencies on the page.
+    </div>
+</footer>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.js'></script>
+<script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
+<script src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js'></script>
+<script  src="script.js"></script>
+
+</body>
+
+</html>
