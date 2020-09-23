@@ -37,6 +37,11 @@ To contribute a formula to the dataset:
 
 Replace `{...}` with the corresponding information. Your entry should look like this [example](https://github.com/valispace/WhatsThatFormula/blob/master/example.json).
 
+2. Append this to the [data.json](https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json).
+3. Submit a pull request to update the data.json.
+4. Your entry will be up on the website, as soon as it is verified!
+
+Thanks for your contribution!
 
 
 
