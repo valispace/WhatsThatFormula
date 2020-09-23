@@ -99,7 +99,7 @@
 	},
 	{
 		"name": "Orbital eccentricity",
-		"latex": "$$e= \\sqrt{1+2\\varepsilon (\\frac{h}{\\mu})^{2}} $$",
+		"latex": "$$ e= \\sqrt{1+2\\varepsilon (\\frac{h}{\\mu})^{2}} = \\sqrt{1-\\frac{b^2}{a^2}} $$",
 		"description": "A measure of the non-circularity of an orbit",
 		"definition": {
 			"e" : "Orbit eccentricity",
@@ -2226,6 +2226,37 @@
 		"tags": ["Spacecraft engineering", "Communications"],
 		"href":"https://books.google.nl/books?hl=en&lr=&id=cCYP0rVR_IEC&oi=fnd&pg=PT10&dq=spacecraft+systems+engineering+&ots=IHezW9yNdP&sig=Y1_W_DJlIkzPuzqKhpIdDdIZr0U&redir_esc=y#v=onepage&q=spacecraft%20systems%20engineering&f=false",
 		"contributed_by": ""
-	}
+	},
+	{
+		"name": "Bernoulli's Law",
+		"latex": "$$ P+\\frac{\\rho v^2}{2}+\\rho g h = constant $$",
+		"description": "Bernoulli's law describes the behavior of a fluid under varying conditions of flow and height",
+		"definition": {
+			"P" : "Static Pressure",
+			"\\rho" : "Fluid Density (in kg per cubic meter)",
+			"v": "Fluid Flow Velocity (in meters per second)",
+			"h" : "Height Above Reference Surface"
+		},
+		"keywords": ["fluid"],
+		"tags": ["Fluid Mechanics", "Aerodynamics"],
+		"href":"https://en.wikipedia.org/wiki/Bernoulli%27s_principle",
+		"contributed_by": ""
+	},
+	{
+		"name": "Lift Force",
+		"latex": "$$ F_L=\\frac{1}{2}C_L \\rho v^2 \\alpha A $$",
+		"description": "Gives the force produced perpendicular to the flow of a fluid",
+		"definition": {
+			"F_L" : "Lift Force",
+			"\\rho" : "Fluid Density",
+			"v": "Fluid Flow Velocity",
+			"\\alpha": "Angle of attack (in radians)",
+			"A" : "Area of the Surface"
+		},
+		"keywords": ["fluid"],
+		"tags": ["Fluid Mechanics", "Aerodynamics"],
+		"href":"https://scienceworld.wolfram.com/physics/LiftForce.html",
+		"contributed_by": ""
+	},
 
 ]

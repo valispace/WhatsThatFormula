@@ -2,7 +2,7 @@
 An online cheatsheet for engineers
 ---
 
-This repository maintain data for [WhatsThatFormula](https://www.whatsthatformula.com), built and maintained by Valispace.
+This repository maintain data for [WhatsThatFormula](http://whatsthatformula.com/), built and maintained by Valispace.
 
 
 ## Contribute
