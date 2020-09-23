@@ -35,7 +35,7 @@ To contribute a formula to the dataset:
 
 ```
 
-Replace `{...}` with the corresponding information. Your entry should look like this [example](https://github.com/valispace/WhatsThatFormula/blob/master/example.json).
+Replace `{...}` with the corresponding information. Your entry should look like this [example](https://github.com/valispace/WhatsThatFormula/blob/master/example.json). Please take care of the special instructions specified in *Notes*
 
 2. Append this to the [data.json](https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json).
 3. Submit a pull request to update the data.json.
@@ -48,6 +48,7 @@ Thanks for your contribution!
 ## Notes
 
 - For the `latex` field, write your formula between `$$   $$`, and use double backslash `\\` for commands. e.g. `\\pi`, `\\Delta` , `\\frac{}{}` etc.
+- For inline LaTeX command use '\\( ... \\)'
 - Keywords are used for search. e.g. the rocket equation can be described by keywords: `["rocket", "delta-v", "tsiolkovski", "momentum"]`
 - Tags are used for categorization: e.g. the rocket equation can be categorized by tags: `['Aerospace', 'Propulsion']`
 
