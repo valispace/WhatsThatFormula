@@ -819,7 +819,7 @@
 		"contributed_by": "Lucky Luke"
 	},
 	{
-		"name": "Orbital Elements (Coversion from position and velocity)",
+		"name": "Orbital Elements (Conversion from position and velocity)",
 		"latex": "$$ \\begin{aligned} &a=-\\frac{\\mu}{v_{0}^{2}-\\frac{\\mu}{r_{0}}} \\quad \\vec{e}=\\frac{1}{\\mu}\\left[\\vec{v}_{0} \\times\\left(\\vec{r}_{0} \\times \\vec{v}_{0}\\right)-\\mu \\frac{\\vec{r}_{0}}{r_{0}}\\right] \\quad \\cos \\theta_{0}=\\frac{\\vec{e} \\cdot \\vec{r}_{0}}{e r_{0}}\\\\ &\\vec{n}=\\frac{\\vec{e}_{Z} \\times \\vec{h}}{\\left|\\vec{e}_{Z} \\times \\vec{h}\\right|} \\quad \\vec{n}=\\cos \\Omega \\vec{e}_{X}+\\sin \\Omega \\vec{e}_{Y} \\quad \\cos i=\\frac{\\vec{e}_{Z} \\cdot \\vec{h}}{|\\vec{h}|}\\\\ &\\cos \\varpi=\\frac{\\vec{n} \\cdot \\vec{e}}{|\\vec{e}|} \\quad \\tan \\theta_{0}=\\frac{\\left(\\frac{r_{0} e_{0}^{2}}{\\mu}\\right) \\sin \\gamma_{0} \\cos \\gamma_{0}}{\\left(\\frac{r_{0} \\sigma_{0}^{2}}{\\mu}\\right) \\cos ^{2} \\gamma_{0}-1} \\quad e^{2}=\\left(\\frac{r_{0} v_{0}^{2}}{\\mu}-1\\right)^{2} \\cos ^{2} \\gamma_{0}+\\sin ^{2} \\gamma_{0}\\\\ \\end{aligned} $$",
 		"description": "Orbital elements are the parameters required to uniquely identify a specific orbit. In celestial mechanics these elements are considered in two-body systems using a Kepler orbit. There are many different ways to mathematically describe the same orbit, but certain schemes, each consisting of a set of six parameters, are commonly used in astronomy and orbital mechanics.",
 		"definition": {
