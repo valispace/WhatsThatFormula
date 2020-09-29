@@ -4,17 +4,25 @@
     margin-bottom: 0;
     padding: .375rem 1rem; }
 
+.hero-body{
+  background-color: lightgray;
+}
 .hero-body h1 {
   font-weight: bold;
   font-size: 4.3rem;
   font-family: Monospace;
   margin: 4px 0 15px 2px;
-  text-align: left; }
+  text-align: left;
+  }
+
 
 body {
   display: flex;
   flex-direction: column; }
 
+section {
+  background-color: whitesmoke;
+}
 textarea {
   box-sizing: border-box;
   margin: 5px;
@@ -42,7 +50,10 @@ input {
 
 .item {
   transition: background .1s;
-  padding: 1rem; }
+  padding: 1rem;
+  box-shadow: 2px 2px 3px lightgray;
+  background-color: white;
+  margin-bottom:1rem }
   .item .header {
     /*display: flex;*/
     cursor: pointer; }
@@ -71,8 +82,8 @@ input {
   transition: background .05s; }
 
 .visual h2 {
-  font-weight: 450;
-  font-size: 1.5rem; }
+  font-weight: 400;
+  font-size: 16pt; }
 
 
 .visual h5 {
@@ -81,7 +92,8 @@ input {
   margin: 4px 0 15px 2px;
   text-align: left; }
   .visual h5.link {
-    font-weight: normal;}
+    font-weight: lighter;
+    font-size: 12pt;}
     .visual h5.link a {
       margin-left: 5px;
       font-weight:normal;
@@ -90,18 +102,20 @@ input {
 
 .visual .formula {
   display: inline-box;
-  float: center;
+  align-self: left;
   font-size: 1.7rem;
-  line-height: 1.7rem; }
+  line-height: 1.7rem;
+  font-size: 14pt;
+   }
 
 /* a {
     text-decoration: none;
     color: black;
-} */
+}
 .input {
   border-left: orange 15px solid;
   margin-bottom: 10px; }
-
+*/
 .about {
   font-size: 0.75rem;
   text-align: center;
@@ -114,7 +128,7 @@ input {
 }
 
 .results {
-  padding: 1.5rem 0; }
+  padding: 0.5rem 0; }
 
 .container-with-background {
   padding: 3vh;

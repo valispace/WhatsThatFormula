@@ -64,6 +64,10 @@ MathJax = {
 
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-end">
+        <a class="navbar-item button is-info is-focused" href="https://github.com/valispace/WhatsThatFormula" target="_blank">
+          <span class="icon"><i class="fa fa-plus"></i></span>
+          <span>Add a formula</span>
+        </a>
         <a class="navbar-item bd-tw-button button" data-social-network="Facebook" data-social-action="share" data-social-target="http://bulma.io" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fvalispace.com">
           <span class="icon"><i class="fa fa-linkedin"></i></span>
           <span>Share</span>
@@ -76,37 +80,39 @@ MathJax = {
           <span class="icon"><i class="fa fa-twitter"></i></span>
           <span>Tweet</span>
         </a>
-        <a class="navbar-item button" href="https://github.com/valispace/WhatsThatFormula" target="_blank">
-          <span class="icon"><i class="fa fa-github"></i></span>
-          <span>Contribute</span>
-        </a>
       </div>
     </div>
 </nav>
 
-  <section class="hero is-light has-background-primary-light">
+  <section class="hero is-dark has-background-primary-dark">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title has-text-centered">
-          <span style="color: #FF9900">$ \</span>What's <span style="color: #FF9900">[</span>That<span style="color: #FF9900">]</span> <span style="color: #FF9900">{</span>Formula<span style="color: #FF9900">}</span> ? <span style="color: #FF9900">$</span>
+        <h1 class="title is-1 has-text-centered">
+          <span style="color: #FF9900">$ \</span><span style="color: black">What's </span> <span style="color: #FF9900">[</span><span style="color: black">That</span><span style="color: #FF9900">]</span> <span style="color: #FF9900">{</span><span style="color: black">Formula</span><span style="color: #FF9900">}</span> <span style="color: black">? </span> <span style="color: #FF9900">$</span>
         </h1>
         <p>
-        <h2 class="subtitle" align="center">
-          An Online Cheatsheet for Engineers
+        <h2 class="subtitle" align="center" >
+          <span style="color: black">An Online Cheatsheet for Engineers</span>
         </h2>
       </div>
     </div>
   </section>
   <body>
+
   <section class="section">
-    <div class="container container-with-background p-6">
-      <div class="field">
-        <h1 class="title">Search</h1>
-        <div class="control">
-          <input class="input" type="text" value='' onkeyup="onKeyup()" onfocus="this.value =''" placeholder="What's That Formula you're looking for?">
+    <div class="columns is-mobile is-centered">
+      <div class="column is-two-thirds">
+        <div class="control has-icons-left">
+          <input class="input is-large " type="text" onfocus="this.value=''" placeholder="What's that formula you're looking for?" value='' onkeyup="onKeyup()" onfocus="this.value =''" >
+          <span class="icon is-medium is-left">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </span>
           <div class="info"></div>
         </div>
-        <hr>
+      </div>
+    </div>
+    <div class="container">
+      <div class="field">
         <div class="results">
           <div class="visual"></div>
         </div>
