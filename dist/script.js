@@ -4,43 +4,43 @@ var searchEle = document.querySelector(".input"),
 	info = document.querySelector(".info");
 
 
-function doSearch(dataset, fuse) {
+	function doSearch(dataset, fuse) {
 
-	showMore = 9;
-	showMoreindices=[0, showMore];
+		showMore = 9;
+		showMoreindices=[0, showMore];
 
 
-	resultJSON = {}
-	visual.innerHTML=""
-	resultJSON = searchEle.value ? fuse.search(searchEle.value): dataset.map(item => {
-		return { item: item }
-	});
-	if (resultJSON.length>showMore){
-		document.getElementById('ShowMoreButton').style.visibility = 'visible';
+		resultJSON = {}
+		visual.innerHTML=""
+		resultJSON = searchEle.value ? fuse.search(searchEle.value): dataset.map(item => {
+			return { item: item }
+		});
+		if (resultJSON.length>showMore){
+			document.getElementById('ShowMoreButton').style.visibility = 'visible';
+		}
+		else{
+			document.getElementById('ShowMoreButton').style.visibility = 'hidden';
+		}
+		renderVisual(resultJSON, showMoreindices, showMore);
+		info.innerHTML = `Found <strong>${resultJSON.length} equations </strong>`;
+		visual.scrollTo(0, 0);
+		result.scrollTo(0, 0);
 	}
-	else{
-		document.getElementById('ShowMoreButton').style.visibility = 'hidden';
-	}
-	renderVisual(resultJSON, showMoreindices, showMore);
-	info.innerHTML = `Found <strong>${resultJSON.length} equations </strong>`;
-	visual.scrollTo(0, 0);
-	result.scrollTo(0, 0);
-}
 
 
 function renderVisual(resultJSON, indices, increment) {
 	currentidxs = indices
 
-	console.log(currentidxs)
 	json_snip = resultJSON.slice(currentidxs[0],currentidxs[1])
+	let html;
 
-	let html = json_snip.reduce((sum, curr) => {
+	html = json_snip.reduce((sum, curr) => {
 		const {name,latex,href,contributed_by,description} = curr;
 		return sum + `
-		<div class="item">
+		<div class="item" onclick="showModalDetails(${curr.item.id})">
 			<div class="header columns">
 			<div class="column is-two-thirds">
-				<h2 class="title has-text-centered-mobile" onclick="showDetails(${curr.item.id})">${curr.item.name} <div class='divider'></div> <i class="rotate fa fa-angle-right" aria-hidden="true"></i></h2>
+				<h2 class="title has-text-centered-mobile">${curr.item.name} <div class='divider'></div> <i class="rotate fa fa-angle-right" aria-hidden="true"></i></h2>
 
 <span id="msg-${curr.item.id}"></span>
 </div>
@@ -69,13 +69,23 @@ function renderVisual(resultJSON, indices, increment) {
  ${curr.item.latex}
 </span>
 </div>
-			<hr>
 			<div class="content description columns" id="content-${curr.item.id}"></div>
 
 		</div>
 		`
 	}, '');
-	visual.innerHTML += html;
+
+	no_results_html = `<div class="item" align="center">
+		Oops! We don't have what you're looking for. You can add the formula for the next engineers who will search for it:<br><br>
+		<button class="button is-info" onclick="location.href='https://github.com/valispace/WhatsThatFormula';"> <span class="icon"><i class="fa fa-plus"></i></span> <divider>Add a formula</button>
+		</div>`
+
+		if (resultJSON.length>0){
+			visual.innerHTML += html;
+		}
+		else{
+			visual.innerHTML=no_results_html;
+		}
 
 	MathJax.typeset()
 	if (currentidxs[0]!=0){
@@ -109,7 +119,7 @@ function showDetails(id) {
 		html = `
 		<div class="description-text column is-half-desktop">
 			<h5 class="has-text-centered-mobile"> ${item.description}
-			<h5 class="has-text-centered-mobile link"> Find more information<a href=${item.href} target="_blank">here</a></h5>
+			<h5 class="has-text-centered-mobile link is-medium"> Find more information<a href=${item.href} target="_blank">here</a></h5>
 		</div>
       	<div class="column"><span> ${defineHTML} </span></div>
 			</div>
@@ -125,6 +135,77 @@ function showDetails(id) {
 		parent.classList.add('show-card');
 		MathJax.typeset();
 	}
+}
+
+function showModalDetails(id) {
+	var modal = document.getElementById('modal-description');
+	var modalContent = modal.querySelector('#modal-content');
+	modalContent.innerHTML = '';
+	var item = dataset.find(x => x.id===id);
+	var defineHTML = getdefinitionHTML(item.definition);
+	var html = `
+	<div class="columns header is-mobile">
+		<div class="column is-two-thirds is-three-quarters-mobile"><span style="font-weight: bold">${item.name}</span></div>
+		<div class="column">
+			<button class="delete close-button" aria-label="close" onclick="closeModal()"></button>
+		</div>
+	</div>
+	<div class="formula">${item.latex}</div>
+	<div class="buttons has-text-centered-mobile">
+		<button class="button" onclick="downloadPNG(${item.id})">
+			<span>Download PNG</span>
+		</button>
+		<button class="button" onclick="copyToClipboardMsg(${item.id})">
+			<span>Copy TeX Code </span>
+		</button>
+	</div>`;
+	if(item.definition && item.definition.length !== 0) {
+		html +=
+			`<div class="modal-content-description columns">
+				<div class="description-text column is-half-desktop">
+				<div class="description">
+					<h5 class="description-title">Description:</h5>
+					<h5 class="has-text-centered-mobile"> ${item.description}</h5>
+					<h5 class="has-text-centered-mobile link is-medium"> Find more information <a style="color:orange" href=${item.href} target="_blank">here</a></h5>
+				</div>`;
+		if(item.tags?.length) {
+			html += `<div class="categories"><h5 class="description-title">Categories:</h5>`;
+			for(let i = 0; i < item.tags.length; i++) {
+				html += `<h5 class="category has-text-centered-mobile"> ${item.tags[i]}</h5>`;
+			}
+			html+= '</div>'
+		}
+		html +=`
+			</div>
+				<div class="column">
+				<h5 class="description-title">Variables:</h5>
+				<span> ${defineHTML} </span>
+				</div>
+			</div>`;
+		} else {
+			html =
+				`<div class="modal-content-description columns">
+					<div class="description-text column">
+						<h5 class="description-title">Description:</h5>
+						<h5 class="has-text-centered-mobile"> ${item.description}
+						<h5 class="link has-text-centered-mobile"> Find more information<a style="color:orange" href=${item.href} target="_blank">here</a></h5>
+					</div>`;
+			if(item.tags?.length) {
+				html += `<div class="categories"><h5 class="description-title">Categories:</h5>`;
+				for(let i = 0; i < item.tags.length; i++) {
+					html += `<h5 class="category has-text-centered-mobile"> ${item.tags[i]}</h5>`;
+				}
+				html+= '</div>'
+			}
+			html+=`</div>`;
+		}
+	modalContent.innerHTML +=html;
+	MathJax.typeset();
+	modal.classList.add('is-active');
+}
+
+function closeModal() {
+	document.getElementById('modal-description').classList.remove('is-active');
 }
 
 function getdefinitionHTML(defined){
@@ -210,16 +291,15 @@ function openNavMenu() {
 	navMenu.classList.toggle('is-active');
 }
 
-
 var options = {
 	shouldSort: true,
 	matchAllTokens: true,
 	findAllMatches: true,
-	threshold: 0.6,
-	location: 0,
-	distance: 100,
+	threshold: 0.1,
+	location: 5,
+	distance: 50,
 	maxPatternLength: 32,
-	minMatchCharLength: 1,
+	minMatchCharLength: 4,
 	includeScore: true,
 	keys: ["name", "keywords"]
 };
@@ -251,6 +331,4 @@ fetch('data.json')
 		fuse = new Fuse(dataset, options);
 		doSearch(dataset,fuse);
 	});
-
-
 
