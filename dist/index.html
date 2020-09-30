@@ -86,7 +86,7 @@ MathJax = {
 
   <section class="hero is-dark has-background-primary-dark">
     <div class="hero-body">
-      <div class="container">
+      <div class="container" style="margin-bottom: 50px;">
         <h1 class="title is-1 has-text-centered">
           <span style="color: #FF9900">$ \</span><span style="color: black">What's </span> <span style="color: #FF9900">[</span><span style="color: black">That</span><span style="color: #FF9900">]</span> <span style="color: #FF9900">{</span><span style="color: black">Formula</span><span style="color: #FF9900">}</span> <span style="color: black">? </span> <span style="color: #FF9900">$</span>
         </h1>
@@ -99,11 +99,11 @@ MathJax = {
   </section>
   <body>
 
-  <section class="section">
+  <section class="section" style="padding:0">
     <div class="columns is-mobile is-centered">
       <div class="column is-6">
-        <div class="control has-icons-left">
-          <input class="input is-large " type="text" onfocus="this.value=''" placeholder="What's that formula you're looking for?" value='' onkeyup="onKeyup()" onfocus="this.value =''" >
+        <div class="control has-icons-left" style="margin-top: -25px">
+          <input class="input is-large" style="border-radius: 24px;" type="text" onfocus="this.value=''" placeholder="What's that formula you're looking for?" value='' onkeyup="onKeyup()" onfocus="this.value =''" >
           <span class="icon is-medium is-left">
             <i class="fa fa-search" aria-hidden="true"></i>
           </span>
@@ -112,7 +112,7 @@ MathJax = {
       </div>
     </div>
   </section>
-  <section class="section_main">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="field">
         <div class="results">
@@ -124,6 +124,13 @@ MathJax = {
       </div>
     </div>
   </section>
+  <div class="modal isActive" id="modal-description">
+    <div class="modal-background" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <div class="box" id="modal-content">
+      </div>
+    </div>
+  </div>
 </body>
 
 

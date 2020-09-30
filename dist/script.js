@@ -37,10 +37,10 @@ function renderVisual(resultJSON, indices, increment) {
 	html = json_snip.reduce((sum, curr) => {
 		const {name,latex,href,contributed_by,description} = curr;
 		return sum + `
-		<div class="item">
+		<div class="item" onclick="showModalDetails(${curr.item.id})">
 			<div class="header columns">
 			<div class="column is-two-thirds">
-				<h2 class="title has-text-centered-mobile" onclick="showDetails(${curr.item.id})">${curr.item.name} <div class='divider'></div> <i class="rotate fa fa-angle-right" aria-hidden="true"></i></h2>
+				<h2 class="title has-text-centered-mobile">${curr.item.name} <div class='divider'></div> <i class="rotate fa fa-angle-right" aria-hidden="true"></i></h2>
 
 <span id="msg-${curr.item.id}"></span>
 </div>
@@ -135,6 +135,77 @@ function showDetails(id) {
 		parent.classList.add('show-card');
 		MathJax.typeset();
 	}
+}
+
+function showModalDetails(id) {
+	var modal = document.getElementById('modal-description');
+	var modalContent = modal.querySelector('#modal-content');
+	modalContent.innerHTML = '';
+	var item = dataset.find(x => x.id===id);
+	var defineHTML = getdefinitionHTML(item.definition);	
+	var html = `
+	<div class="columns header is-mobile">
+		<div class="column is-two-thirds is-three-quarters-mobile"><span style="font-weight: bold">${item.name}</span></div>
+		<div class="column">
+			<button class="delete close-button" aria-label="close" onclick="closeModal()"></button>
+		</div>
+	</div>
+	<div class="formula">${item.latex}</div>
+	<div class="buttons has-text-centered-mobile">
+		<button class="button" onclick="downloadPNG(${item.id})">
+			<span>Download the PNG</span>
+		</button>
+		<button class="button" onclick="copyToClipboardMsg(${item.id})">
+			<span>Copy LaTeX Formula</span>
+		</button>
+	</div>`;
+	if(item.definition && item.definition.length !== 0) {
+		html +=
+			`<div class="modal-content-description columns">
+				<div class="description-text column is-half-desktop">
+				<div class="description">
+					<h5 class="description-title">Description:</h5>
+					<h5 class="has-text-centered-mobile"> ${item.description}</h5>
+					<h5 class="has-text-centered-mobile link is-medium"> Find more information <a style="color:orange" href=${item.href} target="_blank">here</a></h5>
+				</div>`;
+		if(item.tags?.length) {
+			html += `<div class="categories"><h5 class="description-title">Categories:</h5>`;
+			for(let i = 0; i < item.tags.length; i++) {
+				html += `<h5 class="category has-text-centered-mobile"> ${item.tags[i]}</h5>`;
+			}
+			html+= '</div>'
+		} 
+		html +=`
+			</div>
+				<div class="column">
+				<h5 class="description-title">Variables:</h5>
+				<span> ${defineHTML} </span>
+				</div>
+			</div>`;
+		} else {
+			html = 
+				`<div class="modal-content-description columns">
+					<div class="description-text column">
+						<h5 class="description-title">Description:</h5>
+						<h5 class="has-text-centered-mobile"> ${item.description}
+						<h5 class="link has-text-centered-mobile"> Find more information<a style="color:orange" href=${item.href} target="_blank">here</a></h5>
+					</div>`;
+			if(item.tags?.length) {
+				html += `<div class="categories"><h5 class="description-title">Categories:</h5>`;
+				for(let i = 0; i < item.tags.length; i++) {
+					html += `<h5 class="category has-text-centered-mobile"> ${item.tags[i]}</h5>`;
+				}
+				html+= '</div>'
+			} 
+			html+=`</div>`;
+		}
+	modalContent.innerHTML +=html;
+	MathJax.typeset();
+	modal.classList.add('is-active');
+}
+
+function closeModal() {
+	document.getElementById('modal-description').classList.remove('is-active');
 }
 
 function getdefinitionHTML(defined){
