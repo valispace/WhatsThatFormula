@@ -142,7 +142,7 @@ function showModalDetails(id) {
 	var modalContent = modal.querySelector('#modal-content');
 	modalContent.innerHTML = '';
 	var item = dataset.find(x => x.id===id);
-	var defineHTML = getdefinitionHTML(item.definition);	
+	var defineHTML = getdefinitionHTML(item.definition);
 	var html = `
 	<div class="columns header is-mobile">
 		<div class="column is-two-thirds is-three-quarters-mobile"><span style="font-weight: bold">${item.name}</span></div>
@@ -153,10 +153,10 @@ function showModalDetails(id) {
 	<div class="formula">${item.latex}</div>
 	<div class="buttons has-text-centered-mobile">
 		<button class="button" onclick="downloadPNG(${item.id})">
-			<span>Download the PNG</span>
+			<span>Download PNG</span>
 		</button>
 		<button class="button" onclick="copyToClipboardMsg(${item.id})">
-			<span>Copy LaTeX Formula</span>
+			<span>Copy TeX Code </span>
 		</button>
 	</div>`;
 	if(item.definition && item.definition.length !== 0) {
@@ -174,7 +174,7 @@ function showModalDetails(id) {
 				html += `<h5 class="category has-text-centered-mobile"> ${item.tags[i]}</h5>`;
 			}
 			html+= '</div>'
-		} 
+		}
 		html +=`
 			</div>
 				<div class="column">
@@ -183,7 +183,7 @@ function showModalDetails(id) {
 				</div>
 			</div>`;
 		} else {
-			html = 
+			html =
 				`<div class="modal-content-description columns">
 					<div class="description-text column">
 						<h5 class="description-title">Description:</h5>
@@ -196,7 +196,7 @@ function showModalDetails(id) {
 					html += `<h5 class="category has-text-centered-mobile"> ${item.tags[i]}</h5>`;
 				}
 				html+= '</div>'
-			} 
+			}
 			html+=`</div>`;
 		}
 	modalContent.innerHTML +=html;
