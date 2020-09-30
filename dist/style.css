@@ -55,9 +55,7 @@ input {
   padding: 1rem;
   box-shadow: 2px 2px 3px lightgray;
   background-color: white;
-  margin-bottom:1rem;
-  margin-left: 10rem;
-  margin-right: 10rem; }
+  margin-bottom:1rem; }
   .item .header {
     /*display: flex;*/
     cursor: pointer; }
