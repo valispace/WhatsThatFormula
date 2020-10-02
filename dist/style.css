@@ -53,8 +53,8 @@ input {
   box-shadow: 2px 2px 3px lightgray;
   background-color: white;
   margin-bottom: 1rem;
-  margin-left: 10rem;
-  margin-right: 10rem}
+
+}
 
 .item .header {
   height: 60px;
@@ -216,6 +216,12 @@ input {
         font-weight: bold;
         font-size: .8rem; }
 
+@media only screen and (min-width: 800px){
+  .item { 
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
 
 /*# sourceMappingURL=style.css.map */
