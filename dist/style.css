@@ -191,7 +191,8 @@ input {
   .modal-content .close-button {
     float: right; }
   .modal-content .formula {
-    border-bottom: 1px solid lightgrey; }
+    border-bottom: 1px solid lightgrey;
+    font-size: 16pt;}
   .modal-content .modal-content-description {
     font-size: .8rem;
     margin-top: 10px; }
