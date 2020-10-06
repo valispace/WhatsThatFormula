@@ -5,6 +5,7 @@
   <title>WTF:Contribute</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -23,7 +24,12 @@ MathJax = {
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
-<div class="container right">
+
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://www.linkedin.com"></script>
+
+
+<div class="container half right">
   <a class="instructions">
     It's easy-peasy lemon squeezy:
     </a>
@@ -33,11 +39,12 @@ MathJax = {
       <li>Create a pull request for the edit</li>
     </ol>
     <a class="instructions">
-    <p>We will review the pull request ASAP and update your contribution to WTF! <br>Thank you for being an awesome contributor!</p>
+    <p>We will review the pull request ASAP and update your contribution to WTF! <br> <br> If you're not familiar with Github, you can also send us the JSON in an email to: wtf(at)valispace(dot)com <br> <br> Thank you for being an awesome contributor!</p>
     </a>
+    <button class="active home" onclick="window.location.href='../index.html'""> <span class="icon"><i class="fa fa-arrow-left"></i>  Go back to Formulae</span></button>
 </div>
-<div class="container left">
 
+<div class="container half left">
   <h1>Contribute to WTF!<small></h1> <br>
 
   <form>
@@ -102,17 +109,25 @@ MathJax = {
  <br><br> JSON data:
  <div class="results" >
 	<textarea id= "results" cols="80" rows="10" class="result"></textarea>
-</div>
+  </div>
 
 
 
-<br>
+  <br>
     <button onclick=generateJSON()> Generate JSON </button>
     <button class='active' onclick="window.location.href='https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json'">Add data on Github</button>
-  </div>
+</div>
+  <!--div class="outer">
+    <p>
+      <hr>
+      <strong>Whats That Formula?</strong> <br> powered by <br><a href="https://valispace.com"><img src="valispace_logo_gray.png" alt="Valispace: A browser based engineering collaboration tool"  width="350" height="10"></a> <br> the smart productivity tool for engineers
+    <p>
+    </div> -->
 
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+
 
 </body>
 </html>
