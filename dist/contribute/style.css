@@ -1,21 +1,35 @@
 * { box-sizing:border-box; }
 
 /* basic stylings ------------------------------------------ */
-body {}
-.container 		{ 
-  font-family:'Roboto';
-  width: 900px;
-  margin:30px auto 0; 
-  display:block; 
+
+.container	{
+  font-family:'IBM Plex Sans';
+  width: 50%;
   background:#FFF;
-  padding:10px 50px 50px;
 }
+
+.right		{
+  width: 40%;
+  float:right;
+  background:#FFF;
+  margin-right: 5%;
+  padding-top: 15%;
+  padding-right: 5%;
+}
+
+.left		{
+  width: 50%;
+  background:#FFF;
+  float:left;
+  padding:10px 210px 10px;
+}
+
 .formula{
-  text-align:left; 
+  text-align:left;
   font-size:18pt;
 }
-h2 		 { 
-  text-align:center; 
+h2 		 {
+  text-align:center;
   font-size:20pt
 }
 button{
@@ -28,10 +42,25 @@ button{
   cursor: pointer;
 }
 
-h2 small { 
-  font-weight:normal; 
-  color:#888; 
-  display:block; 
+ol{
+  font-size: 14pt;
+  font-family: 'IBM Plex Sans';
+}
+
+.instructions{
+  font-size: 14pt;
+  font-family: 'IBM Plex Sans';
+}
+.active{
+  background-color: rgb(73, 98, 168);
+  color: white;
+  float:right;
+}
+
+h2 small {
+  font-weight:normal;
+  color:#888;
+  display:block;
 }
 .footer 	{ text-align:center; }
 .footer a  { color:#53B2C8; }
@@ -39,13 +68,13 @@ h2 small {
 .results { box-sizing: border-box; padding: 5px; display: flex; justify-content: space-between; height: 30vh; overflow:auto; width: 200%;}
 
 /* form starting stylings ------------------------------- */
-.group 			  { 
-  position:relative; 
-  margin-bottom:45px; 
+.group 			  {
+  position:relative;
+  margin-bottom:45px;
 }
-.description 			  { 
-  position:relative; 
-  margin-bottom:45px; 
+.description 			  {
+  position:relative;
+  margin-bottom:45px;
 }
 input 				{
   font-size:18px;
@@ -59,15 +88,15 @@ input:focus 		{ outline:none; }
 
 /* LABEL ======================================= */
 label 				 {
-  color:#999; 
+  color:#999;
   font-size:18px;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
   left:5px;
   top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 
@@ -82,20 +111,20 @@ input:focus ~ label, input:valid ~ label 		{
 .bar 	{ position:relative; display:block; width:600px; }
 .bar:before, .bar:after 	{
   content:'';
-  height:2px; 
+  height:2px;
   width:0;
-  bottom:1px; 
+  bottom:1px;
   position:absolute;
-  background:#5264AE; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 .bar:before {
   left:50%;
 }
 .bar:after {
-  right:50%; 
+  right:50%;
 }
 
 /* active state */
@@ -106,9 +135,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 /* HIGHLIGHTER ================================== */
 .highlight {
   position:absolute;
-  height:60%; 
-  width:100px; 
-  top:25%; 
+  height:60%;
+  width:100px;
+  top:25%;
   left:0;
   pointer-events:none;
   opacity:0.5;

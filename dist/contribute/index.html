@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>WTF:Contribute</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans">
 
 </head>
 <body>
@@ -22,10 +23,22 @@ MathJax = {
 <script id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
+<div class="container right">
+  <a class="instructions">
+    It's easy-peasy lemon squeezy:
+    </a>
+    <ol>
+      <li>Fill the form and copy the generated JSON data</li>
+      <li>Edit <a href="https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json"> data.json</a> on Github and append the copied JSON.</li>
+      <li>Create a pull request for the edit</li>
+    </ol>
+    <a class="instructions">
+    <p>We will review the pull request ASAP and update your contribution to WTF! <br>Thank you for being an awesome contributor!</p>
+    </a>
+</div>
+<div class="container left">
 
-<div class="container">
-
-  <h1>Contribute to WTF!<small></h1> <br> <p>
+  <h1>Contribute to WTF!<small></h1> <br>
 
   <form>
 
@@ -85,12 +98,19 @@ MathJax = {
     </div>
 
   </form>
-    <br>
-    <button onclick=generateJSON()> Generate JSON </button>
+
  <br><br> JSON data:
  <div class="results" >
 	<textarea id= "results" cols="80" rows="10" class="result"></textarea>
 </div>
+
+
+
+<br>
+    <button onclick=generateJSON()> Generate JSON </button>
+    <button class='active' onclick="window.location.href='https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json'">Add data on Github</button>
+  </div>
+
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 
