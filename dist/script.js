@@ -77,7 +77,7 @@ function renderVisual(resultJSON, indices, increment) {
 
 	no_results_html = `<div class="item" align="center">
 		Oops! We don't have what you're looking for. You can add the formula for the next engineers who will search for it:<br><br>
-		<button class="button is-info" onclick="location.href='https://github.com/valispace/WhatsThatFormula';"> <span class="icon"><i class="fa fa-plus"></i></span> <divider>Add a formula</button>
+		<button class="button is-info" onclick="location.href='contribute/index.html';"> <span class="icon"><i class="fa fa-plus"></i></span> <divider>Add a formula</button>
 		</div>`
 
 		if (resultJSON.length>0){
