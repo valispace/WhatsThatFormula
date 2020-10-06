@@ -46,7 +46,7 @@ function renderVisual(resultJSON, indices, increment) {
 </div>
 <div class="column">
 <div class="level-right has-text-centered">
-      <button class="button" onclick="copyToClipboardMsg(${curr.item.id})">
+      <button class="button_hover" onclick="copyToClipboardMsg(${curr.item.id})">
 
 <span>
     <i class="fa fa-copy" aria-hidden="true"></i>
@@ -56,7 +56,7 @@ function renderVisual(resultJSON, indices, increment) {
 <div class='divider'></div>
 </button>
 
-<button class="button" onclick="downloadPNG(${curr.item.id})">
+<button class="button_hover" onclick="downloadPNG(${curr.item.id})">
   <span>
     <i class="fa fa-download" aria-hidden="true"></i>
   </span>

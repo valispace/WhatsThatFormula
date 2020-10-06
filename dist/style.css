@@ -6,14 +6,20 @@
   padding: .375rem 1rem; }
 
 .hero-body {
-  background-color: lightgray; }
+  background-color: lightgray;
+}
+
+
 
 .hero-body h1 {
   font-weight: bold;
   font-size: 4.3rem;
-  font-family: Monospace;
+  font-family: 'IBM Plex Sans';
   margin: 4px 0 15px 2px;
   text-align: left; }
+
+.hero-body h2 {
+  font-family: 'IBM Plex Sans';}
 
 body {
   display: flex;
@@ -86,8 +92,13 @@ input {
   width: 75px;
   background-color: #FFFFFF; }
 
-.item button {
-  display: none; }
+.item .button_hover {
+  display: none;
+  background-color: white ;
+  border: 1px solid black;
+  border-color: lightgray;
+  border-radius: 4px;
+cursor: pointer}
 
 .item:hover button {
   display: inline-flex; }
@@ -97,20 +108,24 @@ input {
 
 .visual h2 {
   font-weight: 400;
+  font-family: 'IBM Plex Sans';
   font-size: 16pt; }
 
 .visual h5 {
   font-weight: 100;
+  font-family: 'IBM Plex Sans';
   font-size: 1.17rem;
   margin: 4px 0 15px 2px;
   text-align: left; }
 
 .visual h5.link {
+  font-family: 'IBM Plex Sans';
   font-weight: lighter;
   font-size: 12pt; }
 
 .visual h5.link a {
   margin-left: 5px;
+  font-family: 'IBM Plex Sans';
   font-weight: normal;
   color: orange; }
 
@@ -217,7 +232,7 @@ input {
         font-size: .8rem; }
 
 @media only screen and (min-width: 800px){
-  .item { 
+  .item {
     margin-left: 10rem;
     margin-right: 10rem;
   }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Contribute Form WTF</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script>
+MathJax = {
+  tex2jax: {
+            extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            jax: ["input/TeX", "output/SVG"],
+        },
+  displayAlign: "left"
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<div class="container">
+  
+  <h1>Contribute to WTF!<small></h1> <br> <p>
+  
+  <form>
+    
+    <div class="group">      
+      <input type="text" id="formula_name" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Formula Name/Title</label>
+    </div>
+    
+    <div class="group">      
+      <input class="formula_tex" id="formula_tex" type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>(La)Tex Formula/Code (Enclose in \$\$ ... \$\$)</label>
+    </div>
+    <span class="formula" id="formula" ></span>
+    
+    <div class="group">      
+      <input type="text" id="formula_description" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Description</label>
+    </div>
+    <div class="description">      
+      <input type="text" id="formula_definition" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Variable definitions</label>
+    </div>
+    <div class="group">      
+      <input type="text" id="formula_keywords" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Keywords (separated by comma)</label>
+    </div>
+        
+    <div class="group">      
+      <input type="text" id="formula_tags" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Topics/Subjects (separated by comma)</label>
+    </div>
+    
+    <div class="group">      
+      <input type="text" id="formula_link" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Citation Link</label>
+    </div>
+    
+    <div class="group">      
+      <input type="text" id="formula_contributor" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Your name</label>
+    </div>
+    
+  </form>
+    <br>
+    <button onclick=generateJSON()> Generate JSON </button>
+ <br><br> JSON data:
+ <div class="results" >
+	<textarea id= "results" cols="80" rows="10" class="result"></textarea>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
