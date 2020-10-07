@@ -73,6 +73,10 @@ MathJax = {
       <table class="table" id="variable_definition">
         <tbody>
           <tr>
+            <th>Variable (TeX)</th>
+            <th>Description </th>
+          </tr>
+          <tr>
             <td class="abreviation" onclick="showInput(this)">
               <input type="text" name="abr" required  onblur="convertToLatex(this, 'latex_definition_0')">
               <span id="latex_definition_0"></span>
@@ -129,7 +133,9 @@ MathJax = {
 
   <br>
     <button onclick=generateJSON()> Generate JSON </button>
-    <button class='active' onclick="window.location.href='https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json'">Add data on Github</button>
+    <a href='https://github.com/valispace/WhatsThatFormula/blob/master/dist/data.json' target='_blank'>
+    <button class='active' >Add data on Github</button>
+  </a>
 </div>
   <!--div class="outer">
     <p>

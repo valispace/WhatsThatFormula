@@ -25,7 +25,7 @@ function generateJSON(){
   thisJSON["tags"] = (document.getElementById('formula_tags').value).split(',');
   thisJSON["href"] = document.getElementById('formula_link').value;
   thisJSON["contributed_by"] = document.getElementById('formula_contributor').value;
-  results.innerHTML = JSON.stringify(thisJSON, null, 4);
+  results.innerHTML = JSON.stringify(thisJSON, null, '\t');
 }
 
 function addMoreRows(){
