@@ -2263,9 +2263,9 @@
 	"latex": "$$E=mc^2$$",
 	"description": "In physics, mass–energy equivalence is the principle that anything having mass has an equivalent amount of energy and vice versa.",
 	"definition": {
-		"$$E$$": "energy",
-		"$$m$$": "mass",
-		"$$c$$": "speed of light"
+		"E": "energy",
+		"m": "mass",
+		"c": "speed of light"
 	},
 	"keywords": [
 		"Einstein",
