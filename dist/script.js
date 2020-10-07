@@ -46,7 +46,7 @@ function renderVisual(resultJSON, indices, increment) {
 </div>
 <div class="column">
 <div class="level-right has-text-centered">
-      <button class="button" onclick="copyToClipboardMsg(${curr.item.id})">
+      <button class="button_hover" onclick="copyToClipboardMsg(event, ${curr.item.id})">
 
 <span>
     <i class="fa fa-copy" aria-hidden="true"></i>
@@ -56,7 +56,7 @@ function renderVisual(resultJSON, indices, increment) {
 <div class='divider'></div>
 </button>
 
-<button class="button" onclick="downloadPNG(${curr.item.id})">
+<button class="button_hover" onclick="downloadPNG(event, ${curr.item.id})">
   <span>
     <i class="fa fa-download" aria-hidden="true"></i>
   </span>
@@ -77,7 +77,7 @@ function renderVisual(resultJSON, indices, increment) {
 
 	no_results_html = `<div class="item" align="center">
 		Oops! We don't have what you're looking for. You can add the formula for the next engineers who will search for it:<br><br>
-		<button class="button is-info" onclick="location.href='https://github.com/valispace/WhatsThatFormula';"> <span class="icon"><i class="fa fa-plus"></i></span> <divider>Add a formula</button>
+		<button class="button is-info" onclick="location.href='contribute/index.html';"> <span class="icon"><i class="fa fa-plus"></i></span> <divider>Add a formula</button>
 		</div>`
 
 		if (resultJSON.length>0){
@@ -152,10 +152,10 @@ function showModalDetails(id) {
 	</div>
 	<div class="formula">${item.latex}</div>
 	<div class="buttons has-text-centered-mobile">
-		<button class="button" onclick="downloadPNG(${item.id})">
+		<button class="button" onclick="downloadPNG(event, ${item.id})">
 			<span>Download PNG</span>
 		</button>
-		<button class="button" onclick="copyToClipboardMsg(${item.id})">
+		<button class="button" onclick="copyToClipboardMsg(event, ${item.id})">
 			<span>Copy TeX Code </span>
 		</button>
 	</div>`;
@@ -231,7 +231,9 @@ function onKeyup() {
 	}
 }
 
-function downloadPNG(id) {
+function downloadPNG(event, id) {
+	event.preventDefault();
+	event.stopPropagation();
 	var item = dataset.find(x => x.id === id);
 	var formulaEL = document.getElementById('formula-'+id);
 	var svg = formulaEL.querySelector('svg');
@@ -260,7 +262,9 @@ function downloadPNG(id) {
 	};
 }
 
-function copyToClipboardMsg(id) {
+function copyToClipboardMsg(event, id) {
+	event.preventDefault();
+	event.stopPropagation();
     var item = dataset.find(x => x.id === id);
     var el = document.createElement('textarea');
     var raw = item.latex;
