@@ -46,7 +46,7 @@ function renderVisual(resultJSON, indices, increment) {
 </div>
 <div class="column">
 <div class="level-right has-text-centered">
-      <button class="button_hover" onclick="copyToClipboardMsg(${curr.item.id})">
+      <button class="button_hover" onclick="copyToClipboardMsg(event, ${curr.item.id})">
 
 <span>
     <i class="fa fa-copy" aria-hidden="true"></i>
@@ -56,7 +56,7 @@ function renderVisual(resultJSON, indices, increment) {
 <div class='divider'></div>
 </button>
 
-<button class="button_hover" onclick="downloadPNG(${curr.item.id})">
+<button class="button_hover" onclick="downloadPNG(event, ${curr.item.id})">
   <span>
     <i class="fa fa-download" aria-hidden="true"></i>
   </span>
@@ -152,10 +152,10 @@ function showModalDetails(id) {
 	</div>
 	<div class="formula">${item.latex}</div>
 	<div class="buttons has-text-centered-mobile">
-		<button class="button" onclick="downloadPNG(${item.id})">
+		<button class="button" onclick="downloadPNG(event, ${item.id})">
 			<span>Download PNG</span>
 		</button>
-		<button class="button" onclick="copyToClipboardMsg(${item.id})">
+		<button class="button" onclick="copyToClipboardMsg(event, ${item.id})">
 			<span>Copy TeX Code </span>
 		</button>
 	</div>`;
@@ -231,7 +231,9 @@ function onKeyup() {
 	}
 }
 
-function downloadPNG(id) {
+function downloadPNG(event, id) {
+	event.preventDefault();
+	event.stopPropagation();
 	var item = dataset.find(x => x.id === id);
 	var formulaEL = document.getElementById('formula-'+id);
 	var svg = formulaEL.querySelector('svg');
@@ -260,7 +262,9 @@ function downloadPNG(id) {
 	};
 }
 
-function copyToClipboardMsg(id) {
+function copyToClipboardMsg(event, id) {
+	event.preventDefault();
+	event.stopPropagation();
     var item = dataset.find(x => x.id === id);
     var el = document.createElement('textarea');
     var raw = item.latex;

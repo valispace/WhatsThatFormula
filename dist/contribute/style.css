@@ -44,7 +44,7 @@ h2 		 {
   text-align:center;
   font-size:20pt
 }
-button{
+button, .button{
   background-color: white ;
   height: 30px;
   width: 200px;
@@ -90,6 +90,7 @@ h2 small {
 .description 			  {
   position:relative;
   margin-bottom:45px;
+  width: 600px;
 }
 input 				{
   font-size:18px;
@@ -114,6 +115,8 @@ label 				 {
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
+
+label.no-position { position: unset; }
 
 /* active state */
 input:focus ~ label, input:valid ~ label 		{
@@ -178,3 +181,25 @@ input:focus ~ .highlight {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+
+.table, th, td {
+  border: 1px solid #757575;
+  border-collapse: collapse;
+}
+
+.table {  
+  width: 100%; 
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.table input, .table span { 
+  width: 100%;
+  min-width: 300px;
+  border-bottom:unset; 
+}
+
+.abreviation.show input {display: block;}
+.abreviation input {display: none;}
+.abreviation.show span {display: none;}
+.abreviation span {display: block;}

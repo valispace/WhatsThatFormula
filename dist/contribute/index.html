@@ -6,7 +6,6 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -70,10 +69,26 @@ MathJax = {
       <label><strong>Description </strong> (e.g. Universal Law of Gravitation)</label>
     </div>
     <div class="description">
-      <input type="text" id="formula_definition" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label> <strong> Variable definitions </strong> (e.g. G : Universal Gravitation Constant)</label>
+      <label class="no-position"><strong>Variable definitions </strong> (e.g. G : Universal Gravitation Constant)</label>
+      <table class="table" id="variable_definition">
+        <tbody>
+          <tr>
+            <td class="abreviation" onclick="showInput(this)">
+              <input type="text" name="abr" required  onblur="convertToLatex(this, 'latex_definition_0')">
+              <span id="latex_definition_0"></span>
+            </td>
+            <td><input type="text" name="definition" required></td>
+          </tr>
+          <tr>
+            <td class="abreviation" onclick="showInput(this)">
+              <input type="text" name="abr" required onblur="convertToLatex(this, 'latex_definition_1')">
+              <span id="latex_definition_1"></span>
+            </td>
+            <td><input type="text" name="definition" required></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" onclick="addMoreRows()"> + Add</button>
     </div>
     <div class="group">
       <input type="text" id="formula_keywords" required>
