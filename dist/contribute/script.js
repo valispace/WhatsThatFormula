@@ -17,7 +17,7 @@ function generateJSON(){
   for(let i = 0; i< tableDefinitionRows.length; i++) {
     if(tableDefinitionRows[i].children[0].children["abr"].value) {
       var abr = tableDefinitionRows[i].children[0].children["abr"].value;
-      abr = '$$' + abr + '$$';
+      abr =  abr;
       thisJSON["definition"][abr] = tableDefinitionRows[i].children[1].children["definition"].value;
     }
   };
