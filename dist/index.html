@@ -25,15 +25,26 @@
 </head>
 <body>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180098515-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-180098515-1');
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180098515-1"></script>
+<div id="cookie-consent-banner-0" class="cookie-consent-banner">
+  <div class="cookie-consent-banner__inner">
+    <div class="cookie-consent-banner__copy">
+      <div class="cookie-consent-banner__header">THIS WEBSITE USES COOKIES</div>
+      <div class="cookie-consent-banner__description">We use cookies only to analyse our traffic through Google Analytics. For more information, check out our <a class="link" href="">Cookie Policy.</a></a>. To provide consent to our cookies, please select 'Accept'. If you'd like to browse with minimal cookies, select 'Necessary only' </div>
+    </div>
+
+    <div class="cookie-consent-banner__actions">
+      <a href="#" onclick="configure_gtag_accepted()" class="cookie-consent-banner__cta">
+        Accept
+      </a>
+      
+      <a href="#" onclick="configure_gtag_denied()" class="cookie-consent-banner__cta cookie-consent-banner__cta--secondary">
+        Necessary Only
+      </a>
+    </div>
+  </div>
+</div>
 
 
 <!-- partial:index.partial.html -->
@@ -160,7 +171,6 @@ MathJax = {
     </div>
   </div>
 </body>
-
 
 
   <footer class="footer">

@@ -295,6 +295,45 @@ function openNavMenu() {
 	navMenu.classList.toggle('is-active');
 }
 
+function configure_gtag_accepted() {
+	
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-180098515-1');
+	getElementById("cookie-consent-banner-0").style.display = "none";
+}
+
+function configure_gtag_denied() {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('consent', 'default', {'analytics_storage': 'denied'});
+	getElementById("cookie-consent-banner-0").style.display = "none";
+
+}
+
+var raw_dataset = [
+	{
+		"name": "Euler's Identity",
+		"latex": "$$e^{i \\pi} = 1$$",
+		"description": "Euler's identity is often cited as an example of deep mathematical beauty. Three of the basic arithmetic operations occur exactly once each: addition, multiplication, and exponentiation.",
+		"keywords": ["euler","identity", "imaginary", "complex", "transcendental", "most-beautiful-equation"],
+		"tags": ["Math", "default"],
+		"href":"https://en.wikipedia.org/wiki/Euler%27s_identity",
+		"contributed_by": "Hugh Jackman"
+	},
+
+	{
+		"name": "Rocket Equation",
+		"latex": "$$\\Delta v = I_{sp} \\, g_0 \\, \\ln \\left( \\frac{m_0}{m_f} \\right)$$",
+		"description": "The Tsiolkovsky rocket equation, classical rocket equation, or ideal rocket equation is a mathematical equation that describes the motion of vehicles that follow the basic principle of a rocket: a device that can apply acceleration to itself using thrust by expelling part of its mass with high velocity can thereby move due to the conservation of momentum.",
+		"keywords": ["rocket","delta-v", "tsiolkovski", "momentum", "propulsion"],
+		"tags": ["Aerospace","default"],        "href":"https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
+		"contributed_by": "Hannibal Lecter"
+	}
+
+  ];
 var options = {
 	shouldSort: true,
 	matchAllTokens: true,
@@ -324,10 +363,10 @@ searchEle.addEventListener("input", event => {
 
 
 /* MODIFY HERE: LINK TO THE HOSTED JSON*/
-fetch('data.json')
+fetch('https://api.github.com/orgs/nodejs')
 	.then(response => response.json())
 	.then(function(json){
-		dataset = json;
+		dataset = raw_dataset;
 		dataset = dataset.reverse();
 		for (i=0; i<dataset.length; i++){
 			dataset[i].id = i;
@@ -335,4 +374,3 @@ fetch('data.json')
 		fuse = new Fuse(dataset, options);
 		doSearch(dataset,fuse);
 	});
-
