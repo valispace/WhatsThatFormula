@@ -298,7 +298,6 @@ function openNavMenu() {
 function configure_gtag_accepted() {
 	
 	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 
 	gtag('config', 'UA-180098515-1');
@@ -307,10 +306,13 @@ function configure_gtag_accepted() {
 
 function configure_gtag_denied() {
 	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
 	gtag('consent', 'default', {'analytics_storage': 'denied'});
 	document.getElementById("cookie-consent-banner-0").style.display = "none";
 
+}
+
+function gtag(){
+	dataLayer.push(arguments);
 }
 
 var raw_dataset = [
