@@ -302,14 +302,14 @@ function configure_gtag_accepted() {
 	gtag('js', new Date());
 
 	gtag('config', 'UA-180098515-1');
-	getElementById("cookie-consent-banner-0").style.display = "none";
+	document.getElementById("cookie-consent-banner-0").style.display = "none";
 }
 
 function configure_gtag_denied() {
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('consent', 'default', {'analytics_storage': 'denied'});
-	getElementById("cookie-consent-banner-0").style.display = "none";
+	document.getElementById("cookie-consent-banner-0").style.display = "none";
 
 }
 
