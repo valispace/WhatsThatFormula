@@ -295,6 +295,26 @@ function openNavMenu() {
 	navMenu.classList.toggle('is-active');
 }
 
+function configure_gtag_accepted() {
+	
+	window.dataLayer = window.dataLayer || [];
+	gtag('js', new Date());
+
+	gtag('config', 'UA-180098515-1');
+	document.getElementById("cookie-consent-banner-0").style.display = "none";
+}
+
+function configure_gtag_denied() {
+	window.dataLayer = window.dataLayer || [];
+	gtag('consent', 'default', {'analytics_storage': 'denied'});
+	document.getElementById("cookie-consent-banner-0").style.display = "none";
+
+}
+
+function gtag(){
+	dataLayer.push(arguments);
+}
+
 var options = {
 	shouldSort: true,
 	matchAllTokens: true,
@@ -335,4 +355,3 @@ fetch('data.json')
 		fuse = new Fuse(dataset, options);
 		doSearch(dataset,fuse);
 	});
-

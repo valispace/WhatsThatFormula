@@ -25,15 +25,26 @@
 </head>
 <body>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180098515-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-180098515-1');
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180098515-1"></script>
+<div id="cookie-consent-banner-0" class="cookie-consent-banner">
+  <div class="cookie-consent-banner__inner">
+    <div class="cookie-consent-banner__copy">
+      <div class="cookie-consent-banner__header">THIS WEBSITE USES COOKIES</div>
+      <div class="cookie-consent-banner__description">We use cookies only to analyse our traffic through Google Analytics. For more information, check out our <a class="link" href="cookie-policy.html">Cookie Policy.</a></a>. To provide consent to our cookies, please select 'Accept'. If you'd like to browse with minimal cookies, select 'Necessary only' </div>
+    </div>
+
+    <div class="cookie-consent-banner__actions">
+      <a href="#" onclick="configure_gtag_accepted()" class="cookie-consent-banner__cta">
+        Accept
+      </a>
+      
+      <a href="#" onclick="configure_gtag_denied()" class="cookie-consent-banner__cta cookie-consent-banner__cta--secondary">
+        Necessary Only
+      </a>
+    </div>
+  </div>
+</div>
 
 
 <!-- partial:index.partial.html -->
@@ -162,9 +173,14 @@ MathJax = {
 </body>
 
 
-
   <footer class="footer">
   <div class="content has-text-centered">
+    Revoke/Delete Cookies: <a href="#" onclick="configure_gtag_denied()"> 
+      <a href="https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop&hl=en" target="_blank"><span class="icon" style="color: black;"><i class="fa fa-chrome"></i></span></a>
+      <a href="https://support.mozilla.org/en-US/kb/block-websites-storing-cookies-site-data-firefox" target="_blank"><span class="icon" style="color: black;"><i class="fa fa-firefox"></i></span></a>
+      <a href="https://support.microsoft.com/en-us/search?query=enable%20cookies%20in%20edge" target="_blank"><span class="icon" style="color: black;"><i class="fa fa-edge"></i></span></a>
+      <a href="https://support.apple.com/en-ie/guide/safari/sfri11471/mac" target="_blank"><span class="icon" style="color: black;"><i class="fa fa-safari"></i></span></a>
+    <br> <br>
     <p>
       <!-- MODIFY HERE: ENTER LINK OF THE HOSTED TRANSPARENT LOGO -->
       <strong>What's That Formula?</strong> <br> powered by <p></p> <a href="https://www.valispace.com" target="_blank"><img src="valispace_logo_gray.png" alt="Valispace: A browser based engineering collaboration tool"  width="350" height="10"></a> <p></p>
@@ -176,7 +192,8 @@ MathJax = {
       <br> <br> <br>
       <strong> Disclaimer </strong>
       <p>What's that Formula is supported by external contributors. Valispace does not take responsibility for the correctness of the information. <p> Please <a href="mailto:wtf@valispace.com" style="color: orange;"> notify us </a> if you notice any inconsistencies on the page.
-    </div>
+      </div>
+    
 </footer>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.js'></script>
