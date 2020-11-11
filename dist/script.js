@@ -315,27 +315,6 @@ function gtag(){
 	dataLayer.push(arguments);
 }
 
-var raw_dataset = [
-	{
-		"name": "Euler's Identity",
-		"latex": "$$e^{i \\pi} = 1$$",
-		"description": "Euler's identity is often cited as an example of deep mathematical beauty. Three of the basic arithmetic operations occur exactly once each: addition, multiplication, and exponentiation.",
-		"keywords": ["euler","identity", "imaginary", "complex", "transcendental", "most-beautiful-equation"],
-		"tags": ["Math", "default"],
-		"href":"https://en.wikipedia.org/wiki/Euler%27s_identity",
-		"contributed_by": "Hugh Jackman"
-	},
-
-	{
-		"name": "Rocket Equation",
-		"latex": "$$\\Delta v = I_{sp} \\, g_0 \\, \\ln \\left( \\frac{m_0}{m_f} \\right)$$",
-		"description": "The Tsiolkovsky rocket equation, classical rocket equation, or ideal rocket equation is a mathematical equation that describes the motion of vehicles that follow the basic principle of a rocket: a device that can apply acceleration to itself using thrust by expelling part of its mass with high velocity can thereby move due to the conservation of momentum.",
-		"keywords": ["rocket","delta-v", "tsiolkovski", "momentum", "propulsion"],
-		"tags": ["Aerospace","default"],        "href":"https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
-		"contributed_by": "Hannibal Lecter"
-	}
-
-  ];
 var options = {
 	shouldSort: true,
 	matchAllTokens: true,
@@ -365,10 +344,10 @@ searchEle.addEventListener("input", event => {
 
 
 /* MODIFY HERE: LINK TO THE HOSTED JSON*/
-fetch('https://api.github.com/orgs/nodejs')
+fetch('data.json')
 	.then(response => response.json())
 	.then(function(json){
-		dataset = raw_dataset;
+		dataset = json;
 		dataset = dataset.reverse();
 		for (i=0; i<dataset.length; i++){
 			dataset[i].id = i;
