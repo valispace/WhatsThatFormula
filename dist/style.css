@@ -103,6 +103,10 @@ cursor: pointer}
 .item:hover button {
   display: inline-flex; }
 
+@media (hover: hover) and (pointer: fine) {
+  .item:hover button {display: none;}
+}
+
 .formula :hover {
   transition: background .05s; }
 
@@ -203,14 +207,13 @@ cursor: pointer}
   z-index: 2147483645;
   box-sizing: border-box;
   width: 100%;
-
+  padding:1.5rem;
   background-color: #F1F6F4;
 }
 
 .cookie-consent-banner__inner {     
   max-width: 960px;
   margin: 0 auto;
-  padding: 32px 0;
 }
 
 .cookie-consent-banner__copy { 
@@ -281,9 +284,17 @@ cursor: pointer}
 .cookie-consent-banner__cta:last-child {
   margin-left: 16px;
 }
-@media only screen and (max-device-width: 375px) {
-  .title.is-1{
-    font-size: 2rem;
+@media only screen and (max-device-width: 500px) {
+  .page-title.title {
+    font-size: 1.25rem;
+    color: black !important;
+  }
+  .page-title.title .big-letter {
+    font-size:2rem;
+    margin-right: -5px;
+  }
+  .page-title.title .orange {
+    font-size: 1rem;
   }
   input.is-large::placeholder{
     font-size: 1rem;
@@ -302,10 +313,11 @@ cursor: pointer}
     left: 0;
     z-index: 2147483645;
     box-sizing: border-box;
-    width: 100%;
-    height:30%;
-  
+    width: 100%;  
     background-color: #F1F6F4;
+  }
+  .cookie-consent-banner__inner {
+    padding:0;
   }
   .cookie-consent-banner__header {
     margin-bottom: 2px;
@@ -377,6 +389,19 @@ cursor: pointer}
   }
 }
 
+.page-title {
+  font-size: 3rem;
+  color: black !important;
+}
+
+.page-title .orange {
+  color: orange;
+}
+
+.page-title .big-letter {
+  font-size: 3.9rem;
+  margin-right: -10px;
+}
 /*# sourceMappingURL=styles.css.map */
 
 /*# sourceMappingURL=style.css.map */
