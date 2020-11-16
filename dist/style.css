@@ -40,6 +40,7 @@ label {
 
 input {
   box-sizing: border-box;
+  display: flex;
   padding: 9px;
   font-size: 1.25rem;
   width: 60%; }
@@ -101,6 +102,10 @@ cursor: pointer}
 
 .item:hover button {
   display: inline-flex; }
+
+@media only screen and (max-device-width: 500px) {
+  .item:hover button {display: none;}
+}
 
 .formula :hover {
   transition: background .05s; }
@@ -194,48 +199,6 @@ cursor: pointer}
   100% {
     opacity: 1;
     max-height: 396px; } }
-@media only screen and (max-device-width: 375px) {
-  .visual .formula svg,
-  .modal-content .formula svg {
-    width: 100%;
-    height: 100%; } }
-.modal-content {
-  width: 100% !important;
-  max-width: 840px !important; }
-  .modal-content .close-button {
-    float: right; }
-  .modal-content .formula {
-    border-bottom: 1px solid lightgrey;
-    font-size: 16pt;}
-  .modal-content .modal-content-description {
-    font-size: .8rem;
-    margin-top: 10px; }
-    .modal-content .modal-content-description .description-title {
-      font-weight: bold;
-      margin-bottom: 5px; }
-    .modal-content .modal-content-description .description {
-      margin-bottom: 20px; }
-    .modal-content .modal-content-description .categories .category {
-      text-decoration: underline; }
-  .modal-content .buttons {
-    margin: 5px 0px; }
-    .modal-content .buttons .button {
-      margin: 5px 0px;
-      background-color: rgba(255, 165, 0, 0.5);
-      border-radius: 0px; }
-      .modal-content .buttons .button:hover {
-        background-color: orange;
-        border-color: orange; }
-      .modal-content .buttons .button span {
-        font-weight: bold;
-        font-size: .8rem; }
-
-@media only screen and (min-width: 800px){
-  .item {
-    margin-left: 10rem;
-    margin-right: 10rem;
-  }
-}
 
 .cookie-consent-banner {
   position: fixed;
@@ -244,14 +207,13 @@ cursor: pointer}
   z-index: 2147483645;
   box-sizing: border-box;
   width: 100%;
-
+  padding:1.5rem;
   background-color: #F1F6F4;
 }
 
 .cookie-consent-banner__inner {     
   max-width: 960px;
   margin: 0 auto;
-  padding: 32px 0;
 }
 
 .cookie-consent-banner__copy { 
@@ -322,7 +284,138 @@ cursor: pointer}
 .cookie-consent-banner__cta:last-child {
   margin-left: 16px;
 }
+@media only screen and (max-device-width: 500px) {
+  .page-title.title {
+    font-size: 1.25rem;
+    color: black !important;
+  }
+  .page-title.title .big-letter {
+    font-size:2rem;
+    margin-right: -5px;
+  }
+  .page-title.title .orange {
+    font-size: 1rem;
+  }
+  input.is-large::placeholder{
+    font-size: 1rem;
+    
+  }
+  .subtitle {
+    font-size: 0.75rem;
+  }
+  .control.has-icons-left .icon, .control.has-icons-right .icon {
+    height: 1.6rem;
+  }
+  .hero-body {
+    padding: 1rem 1rem;
+  }
+  .control {
+    font-size: 0.75rem;
+    text-align: left;
+  }
+  .input{
+    height: 2rem;
+  }
+  .visual .formula svg,
+  .modal-content .formula svg {
+    font-size: 1rem;
+    width: 100% 
+  } 
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483645;
+    box-sizing: border-box;
+    width: 100%;  
+    background-color: #F1F6F4;
+  }
+  .cookie-consent-banner__inner {
+    padding:0;
+  }
+  .cookie-consent-banner__header {
+    margin-bottom: 2px;
+    font-size: 0.75rem;
+    line-height: 24px;
+  }
+  
+  .cookie-consent-banner__description {
+    font-family: "CeraPRO-Regular", sans-serif, arial;
+    font-weight: normal;
+    color: #838F93;
+    font-size: 0.75rem;
+    line-height: 24px;
+  }
+  
+  .cookie-consent-banner__cta {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 16px;
+      
+    border-radius: 2px;
+    
+    background-color: orange;
+     
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-family: "CeraPRO-Regular", sans-serif, arial;
+    font-weight: normal;
+    font-size: 0.75rem;
+    line-height: 20px;
+  }
+}
+  .modal-content {
+  width: 100% !important;
+  max-width: 840px !important; }
+  .modal-content .close-button {
+    float: right; }
+  .modal-content .formula {
+    border-bottom: 1px solid lightgrey;
+    font-size: 16pt;}
+  .modal-content .modal-content-description {
+    font-size: .8rem;
+    margin-top: 10px; }
+    .modal-content .modal-content-description .description-title {
+      font-weight: bold;
+      margin-bottom: 5px; }
+    .modal-content .modal-content-description .description {
+      margin-bottom: 20px; }
+    .modal-content .modal-content-description .categories .category {
+      text-decoration: underline; }
+  .modal-content .buttons {
+    margin: 5px 0px; }
+    .modal-content .buttons .button {
+      margin: 5px 0px;
+      background-color: rgba(255, 165, 0, 0.5);
+      border-radius: 0px; }
+      .modal-content .buttons .button:hover {
+        background-color: orange;
+        border-color: orange; }
+      .modal-content .buttons .button span {
+        font-weight: bold;
+        font-size: .8rem; }
 
+@media only screen and (min-width: 800px){
+  .item {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+.page-title {
+  font-size: 3rem;
+  color: black !important;
+}
+
+.page-title .orange {
+  color: orange;
+}
+
+.page-title .big-letter {
+  font-size: 3.9rem;
+  margin-right: -10px;
+}
 /*# sourceMappingURL=styles.css.map */
 
 /*# sourceMappingURL=style.css.map */
