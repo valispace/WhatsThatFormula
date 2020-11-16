@@ -298,9 +298,23 @@ cursor: pointer}
   }
   input.is-large::placeholder{
     font-size: 1rem;
+    
   }
   .subtitle {
     font-size: 0.75rem;
+  }
+  .control.has-icons-left .icon, .control.has-icons-right .icon {
+    height: 1.6rem;
+  }
+  .hero-body {
+    padding: 1rem 1rem;
+  }
+  .control {
+    font-size: 0.75rem;
+    text-align: left;
+  }
+  .input{
+    height: 2rem;
   }
   .visual .formula svg,
   .modal-content .formula svg {
