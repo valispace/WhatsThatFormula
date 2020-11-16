@@ -103,7 +103,7 @@ cursor: pointer}
 .item:hover button {
   display: inline-flex; }
 
-@media (hover: hover) and (pointer: fine) {
+@media only screen and (max-device-width: 500px) {
   .item:hover button {display: none;}
 }
 
