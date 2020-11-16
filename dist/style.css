@@ -40,6 +40,7 @@ label {
 
 input {
   box-sizing: border-box;
+  display: flex;
   padding: 9px;
   font-size: 1.25rem;
   width: 60%; }
@@ -195,6 +196,12 @@ cursor: pointer}
     opacity: 1;
     max-height: 396px; } }
 @media only screen and (max-device-width: 375px) {
+  .title.is-1{
+    font-size: 2rem;
+  }
+  input.is-large::placeholder{
+    font-size: 1rem;
+}
   .visual .formula svg,
   .modal-content .formula svg {
     width: 100%;

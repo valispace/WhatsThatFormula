@@ -317,6 +317,33 @@ function gtag(){
 	dataLayer.push(arguments);
 }
 
+var raw_dataset = [
+{
+	"name": "Classical central force problem",
+	"latex": "$$t-t_{0} = \\int_{r_{0}}^{r}\\frac{dr}{\\pm \\sqrt{\\frac{2}{m}(E-U(r))-\\frac{h^{2}}{r^{2}}}}$$",
+	"description": "In classical potential theory, the central-force problem is to determine the motion of a particle in a single central potential field.",
+	"definition": {},
+	"keywords": ["central force", "central potential field", "orbit"],
+	"tags": ["Orbital mechanics", "Classical mechanics"],
+	"href":"https://en.wikipedia.org/wiki/Classical_central-force_problem",
+	"contributed_by": "---"
+},
+{
+	"name": "Kepler's 2nd law",
+	"latex": "$$\\frac{dA}{dt}=\\frac{H_{0}}{2m}=\\frac{h}{2}=constant$$",
+	"description": "In astronomy, Kepler's laws of planet motion are three scientific laws describing the motion of planets around the Sun. Second law: a line joining a planet and the Sun sweeps out equal areas during equal intervals of time.",
+	"definition": {
+			"dA" : "Area swept",
+			"H_0" : "Total Angular momentum",
+			"h" : "Specific Angular Momentum",
+			"m" : "mass of the body"
+		},
+	"keywords": ["planetary motion", "Kepler’s laws", "sun", "central force", "orbit"],
+	"tags": ["Orbital mechanics", "Astronomy"],
+	"href":"https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+	"contributed_by": "Johannes Kepler"
+}
+];
 var options = {
 	shouldSort: true,
 	matchAllTokens: true,
@@ -346,10 +373,10 @@ searchEle.addEventListener("input", event => {
 
 
 /* MODIFY HERE: LINK TO THE HOSTED JSON*/
-fetch('data.json')
+fetch('https://api.github.com/orgs/nodejs')
 	.then(response => response.json())
 	.then(function(json){
-		dataset = json;
+		dataset = raw_dataset;
 		dataset = dataset.reverse();
 		for (i=0; i<dataset.length; i++){
 			dataset[i].id = i;
