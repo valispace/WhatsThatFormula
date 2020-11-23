@@ -211,21 +211,21 @@ cursor: pointer}
   background-color: #F1F6F4;
 }
 
-.cookie-consent-banner__inner {     
+.cookie-consent-banner__inner {
   max-width: 960px;
   margin: 0 auto;
 }
 
-.cookie-consent-banner__copy { 
+.cookie-consent-banner__copy {
   margin-bottom: 16px;
 }
 
-.cookie-consent-banner__actions {    
+.cookie-consent-banner__actions {
 }
 
 .cookie-consent-banner__header {
   margin-bottom: 8px;
-  
+
   font-family: "CeraPRO-Bold", sans-serif, arial;
   font-weight: normal;
   font-size: 16px;
@@ -245,11 +245,11 @@ cursor: pointer}
   display: inline-block;
   min-width: 164px;
   padding: 11px 13px;
-    
+
   border-radius: 2px;
-  
+
   background-color: orange;
-   
+
   color: #FFF;
   text-decoration: none;
   text-align: center;
@@ -259,13 +259,13 @@ cursor: pointer}
   line-height: 20px;
 }
 
-.cookie-consent-banner__cta--secondary { 
+.cookie-consent-banner__cta--secondary {
   padding: 9px 13px;
-  
+
   border: 2px solid #3A4649;
-  
+
   background-color: transparent;
-  
+
   color: orange;
 }
 
@@ -275,9 +275,9 @@ cursor: pointer}
 
 .cookie-consent-banner__cta--secondary:hover {
   border-color: #838F93;
-    
+
   background-color: transparent;
-  
+
   color: orange;
 }
 
@@ -298,7 +298,7 @@ cursor: pointer}
   }
   input.is-large::placeholder{
     font-size: 1rem;
-    
+
   }
   .subtitle {
     font-size: 0.75rem;
@@ -306,6 +306,10 @@ cursor: pointer}
   .control.has-icons-left .icon, .control.has-icons-right .icon {
     height: 1.6rem;
   }
+  .icon.is-medium .fa {
+    font-size: 24px;
+    height: 1.2rem;
+}
   .hero-body {
     padding: 1rem 1rem;
   }
@@ -319,15 +323,15 @@ cursor: pointer}
   .visual .formula svg,
   .modal-content .formula svg {
     font-size: 1rem;
-    width: 100% 
-  } 
+    width: 100%
+  }
   .cookie-consent-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 2147483645;
     box-sizing: border-box;
-    width: 100%;  
+    width: 100%;
     background-color: #F1F6F4;
   }
   .cookie-consent-banner__inner {
@@ -338,7 +342,7 @@ cursor: pointer}
     font-size: 0.75rem;
     line-height: 24px;
   }
-  
+
   .cookie-consent-banner__description {
     font-family: "CeraPRO-Regular", sans-serif, arial;
     font-weight: normal;
@@ -346,16 +350,16 @@ cursor: pointer}
     font-size: 0.75rem;
     line-height: 24px;
   }
-  
+
   .cookie-consent-banner__cta {
     box-sizing: border-box;
     display: inline-block;
     min-width: 16px;
-      
+
     border-radius: 2px;
-    
+
     background-color: orange;
-     
+
     color: #FFF;
     text-decoration: none;
     text-align: center;
